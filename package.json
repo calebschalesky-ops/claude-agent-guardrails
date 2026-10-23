@@ -1,0 +1,11 @@
+{
+  "name": "claude-agent-guardrails",
+  "version": "1.0.0",
+  "description": "Claude Code PreToolUse hooks that confine each subagent to its own files and make outward actions ask a human.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  }
+}

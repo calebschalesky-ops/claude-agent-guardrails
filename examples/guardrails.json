@@ -1,0 +1,35 @@
+{
+  "log": ".claude/guardrails.log",
+  "territory": {
+    "agents": {
+      "docs-writer": {
+        "label": "Docs writer",
+        "note": "Owns the docs site and the changelog. Nothing else.",
+        "allow": ["CHANGELOG.md"],
+        "allowPrefixes": ["docs/"],
+        "deny": ["docs/STYLE.md"],
+        "denyPrefixes": ["docs/legal/"],
+        "shell": "none"
+      },
+      "qa": {
+        "label": "QA",
+        "note": "Plays the build and files reports. Fixes nothing.",
+        "allowPrefixes": ["qa/"],
+        "shell": "guarded",
+        "denyShellPatterns": [["\\b(?:taskkill|pkill|kill)\\b", "killing a process"]]
+      },
+      "engine": {
+        "label": "Engine",
+        "allowPrefixes": ["src/engine/", "tools/"],
+        "denyPrefixes": ["src/engine/vendor/"],
+        "shell": "full"
+      }
+    }
+  },
+  "ceiling": {
+    "protectedPaths": ["data/", "~/Documents/"],
+    "ask": { "publish_post": "publishing a post" },
+    "deny": { "submit_order": "placing an order", "transfer_funds": "moving money" },
+    "denyCommands": [["\\bnpm\\s+publish\\b", "publishing to npm"]]
+  }
+}
