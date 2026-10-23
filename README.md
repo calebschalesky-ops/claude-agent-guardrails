@@ -1,5 +1,7 @@
 # claude-agent-guardrails
 
+[![tests](https://github.com/calebschalesky-ops/claude-agent-guardrails/actions/workflows/tests.yml/badge.svg)](https://github.com/calebschalesky-ops/claude-agent-guardrails/actions/workflows/tests.yml) ![license](https://img.shields.io/badge/license-MIT-blue)
+
 Two Claude Code `PreToolUse` hooks for running several agents at once without trusting a prompt to keep them in line.
 
 - **`territory`**: each named subagent may write only its own files. Claude Code's `tools:` allowlist decides *which tools* an agent holds, never *which paths* it may write, so an agent given `Edit` for one file can edit every file on disk. This closes that gap.
