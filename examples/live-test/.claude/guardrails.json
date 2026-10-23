@@ -1,0 +1,13 @@
+{
+  "log": "guardrails.log",
+  "territory": {
+    "agents": {
+      "notetaker": {
+        "label": "Notetaker",
+        "note": "Writes meeting notes under notes/ only.",
+        "allowPrefixes": ["notes/"],
+        "shell": "none"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          { "type": "command", "command": "node \"/path/to/claude-agent-guardrails/hooks/territory.mjs\"" },
+          { "type": "command", "command": "node \"/path/to/claude-agent-guardrails/hooks/ceiling.mjs\"" }
+        ]
+      }
+    ]
+  }
+}
